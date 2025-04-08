@@ -1,0 +1,44 @@
+---
+import MaxWidthWrapper from "../max-width-wrapper/index.astro";
+import {
+  Card,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "@/components/ui/card";
+
+import { education } from "@cv";
+---
+
+<MaxWidthWrapper className="space-y-4">
+  <h2 class="text-2xl font-bold tracking-wider">Education</h2>
+  <ul class="space-y-4">
+    {
+      education.map(({ institution, startDate, endDate, area }) => {
+        const startYear = new Date(startDate).getFullYear();
+        const endYear =
+          endDate !== null ? new Date(endDate).getFullYear() : "Present";
+        const years = `${startYear} - ${endYear}`;
+
+        return (
+          <li>
+            <Card className="w-full bg-secondary-background">
+              <CardContent className="sm:flex justify-between items-start mb-1">
+                <div>
+                  <CardTitle className="text-lg leading-relaxed">
+                    {institution}
+                  </CardTitle>
+                  <CardDescription className="leading-relaxed">
+                    {area}
+                  </CardDescription>
+                </div>
+
+                <time class="leading-relaxed">{years}</time>
+              </CardContent>
+            </Card>
+          </li>
+        );
+      })
+    }
+  </ul>
+</MaxWidthWrapper>
