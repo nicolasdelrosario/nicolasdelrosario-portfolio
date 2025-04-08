@@ -1,0 +1,93 @@
+---
+import Star8 from "@/components/stars/s8";
+import MaxWidthWrapper from "../max-width-wrapper/index.astro";
+import { Earth, Mail, Github, Linkedin } from "@lucide/astro";
+
+import { basics } from "@cv";
+import { Button } from "../ui/button";
+const { name, label, location, email, linkedin, github } = basics;
+const { city, region } = location;
+---
+
+<MaxWidthWrapper className="md:grid grid-cols-6">
+  <div class="sm:grid-cols-4 sm:grid md:block md:col-span-4">
+    <div class="space-y-4 sm:col-span-3">
+      <h1 class="text-4xl font-bold tracking-wider">{name}</h1>
+      <p class="text-2xl font-semibold tracking-wide leading-10">
+        I'm a
+        <span
+          class="relative border-1 border-border/40 bg-main/50 px-2 rounded-base inline-flex items-center gap-2"
+        >
+          <Star8
+            color="background"
+            size={24}
+            stroke="black"
+            strokeWidth={6}
+            className="absolute -top-2 -left-2 animate-spin-slow"
+          />
+          Full Stack Developer
+          <Star8
+            color="background"
+            size={24}
+            stroke="black"
+            strokeWidth={6}
+            className="absolute -bottom-2 -right-2 animate-spin-slow"
+          />
+        </span>
+        {label}
+      </p>
+    </div>
+    <div class="space-y-4 sm:col-span-1">
+      <p class="text-md flex items-center">
+        <Earth class="size-4 mr-2" />
+        {region} - {city}
+      </p>
+      <footer class="space-x-4 flex space-y-4 md:space-y-0 md:block flex-wrap">
+        {
+          email && (
+            <a
+              href={`mailto:${email}`}
+              target="_blank"
+              title={`Send an email to ${name}`}
+              aria-label={`Send an email to ${name}`}
+            >
+              <Button className="cursor-pointer bg-main/50 hover:bg-main/70">
+                <Mail class="size-4" />
+                <span class="sr-only">Send an email</span>
+              </Button>
+            </a>
+          )
+        }
+        {
+          github && (
+            <a
+              href={github}
+              target="_blank"
+              title={`Visit ${name}'s GitHub profile`}
+              aria-label={`Visit ${name}'s GitHub profile`}
+            >
+              <Button className="cursor-pointer bg-main/50 hover:bg-main/70">
+                <Github class="size-4" />
+              </Button>
+            </a>
+          )
+        }
+        {
+          linkedin && (
+            <a
+              href={linkedin}
+              target="_blank"
+              title={`Visit ${name}'s LinkedIn profile`}
+              aria-label={`Visit ${name}'s LinkedIn profile`}
+            >
+              <Button className="cursor-pointer bg-main/50 hover:bg-main/70">
+                <Linkedin class="size-4" />
+              </Button>
+            </a>
+          )
+        }
+      </footer>
+    </div>
+  </div>
+  <div class="col-span-2 hidden">The image is going to be here (someday)</div>
+</MaxWidthWrapper>
