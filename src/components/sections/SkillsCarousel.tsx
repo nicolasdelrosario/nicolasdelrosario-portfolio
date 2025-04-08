@@ -35,7 +35,7 @@ export function SkillsCarousel({ skills }: { skills: Skill[] }) {
 								{skillPair.map(({ category, technologies }) => (
 									<Card
 										key={category}
-										className="bg-main/50 text-main-foreground h-full"
+										className="bg-main/80 text-main-foreground h-full"
 									>
 										<CardContent className="p-4 flex flex-col gap-2">
 											<CardTitle className="text-lg leading-relaxed">
