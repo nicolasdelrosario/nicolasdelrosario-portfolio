@@ -1,0 +1,59 @@
+---
+import MaxWidthWrapper from "../max-width-wrapper/index.astro";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+import { work } from "@cv";
+---
+
+<MaxWidthWrapper className="space-y-4">
+  <h2 class="text-2xl font-bold tracking-wider">Work Experience</h2>
+  <ul class="space-y-4">
+    {
+      work.map(({ name, startDate, endDate, position, summary, badgets }) => {
+        const startYear = new Date(startDate).getFullYear();
+        const endYear =
+          endDate !== null ? new Date(endDate).getFullYear() : "Present";
+        const years = `${startYear} - ${endYear}`;
+
+        return (
+          <li>
+            <Card className="w-full bg-main/50">
+              <CardHeader className="flex justify-between items-start mb-1">
+                <div>
+                  <CardTitle className="text-lg leading-relaxed">
+                    {name}
+                  </CardTitle>
+                  <CardDescription className="leading-relaxed">
+                    {position}
+                  </CardDescription>
+                </div>
+
+                <time class="leading-relaxed">{years}</time>
+              </CardHeader>
+
+              <CardContent>
+                <p class="text-foreground leading-relaxed">{summary}</p>
+              </CardContent>
+
+              <CardFooter className="flex flex-wrap gap-1.5">
+                {badgets?.map((badge) => (
+                  <Badge variant={"neutral"} className="text-xs px-2 py-0.5">
+                    {badge}
+                  </Badge>
+                ))}
+              </CardFooter>
+            </Card>
+          </li>
+        );
+      })
+    }
+  </ul>
+</MaxWidthWrapper>
