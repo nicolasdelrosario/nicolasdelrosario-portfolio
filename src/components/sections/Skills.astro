@@ -1,5 +1,5 @@
 ---
-import MaxWidthWrapper from "../max-width-wrapper/index.astro";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper.astro";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 
 import { SkillsCarousel } from "./SkillsCarousel";
@@ -21,7 +21,9 @@ import { Badge } from "../ui/badge";
           skills.map(({ category, technologies }) => (
             <Card key={category} className="bg-main/80 text-main-foreground">
               <CardContent className="p-4 gap-2">
-                <CardTitle className="text-lg leading-relaxed">{category}</CardTitle>
+                <CardTitle className="text-lg leading-relaxed">
+                  {category}
+                </CardTitle>
                 <div class="flex flex-wrap gap-2 mt-4">
                   {technologies?.map((badge) => (
                     <Badge

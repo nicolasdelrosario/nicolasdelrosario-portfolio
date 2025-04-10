@@ -1,0 +1,12 @@
+---
+// MaxWidthWrapper.astro
+export interface Props {
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
+---
+
+<div class={`mx-auto h-full w-full max-w-[700px] ${className}`}>
+  <slot />
+</div>
