@@ -1,0 +1,68 @@
+---
+import { references } from "@cv";
+
+import MaxWidthWrapper from "@/components/MaxWidthWrapper.astro";
+import { Card, CardContent, CardFooter, CardTitle } from "../ui/card";
+import { Avatar } from "@/components/ui/avatar";
+import { buttonVariants } from "@/components/ui/button";
+
+import LinkedIn from "@/icons/LinkedIn.astro";
+---
+
+<MaxWidthWrapper className="space-y-4">
+  <h2 class="text-2xl font-bold tracking-wider dark:text-foreground">
+    References
+  </h2>
+  <div class="space-y-4">
+    {
+      references.map(
+        ({ name, role, organization, image, testimonial, linkedin }) => (
+          <Card className="bg-secondary-background">
+            <CardContent>
+              <i class="text-pretty">
+                &ldquo;
+                {testimonial}
+                &rdquo;
+              </i>
+            </CardContent>
+
+            <CardFooter className="flex justify-between">
+              <div class="flex items-center gap-4">
+                <Avatar>
+                  <img
+                    class="w-full h-full"
+                    src={image.src}
+                    alt={image.alt}
+                    loading="lazy"
+                  />
+                </Avatar>
+                <div>
+                  <CardTitle>{name}</CardTitle>
+                  <span class="text-sm">
+                    {role} — {organization}
+                  </span>
+                </div>
+              </div>
+              {linkedin && (
+                <div>
+                  <a
+                    href={linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit LinkedIn profile"
+                    class={buttonVariants({
+                      size: "icon",
+                      class: "cursor-pointer",
+                    })}
+                  >
+                    <LinkedIn />
+                  </a>
+                </div>
+              )}
+            </CardFooter>
+          </Card>
+        ),
+      )
+    }
+  </div>
+</MaxWidthWrapper>
