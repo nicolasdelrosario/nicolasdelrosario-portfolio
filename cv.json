@@ -151,7 +151,7 @@
       "organization": "@CleverIT",
       "image": {
         "alt": "Ray Del Rosario",
-        "src": "/src/assets/ray-del-rosario.webp"
+        "src": "./src/assets/ray-del-rosario.webp"
       },
       "linkedin": "https://www.linkedin.com/in/raydelrosario",
       "testimonial": "As his older brother, I've had a front-row seat to Nicolas' growth in tech. His dedication, fast learning curve, and genuine passion for building clean, scalable solutions stand out. While we haven’t worked together directly, I fully vouch for his technical abilities and work ethic."
@@ -162,7 +162,7 @@
       "organization": "Freelancer",
       "image": {
         "alt": "Geremy Ocsa",
-        "src": "/src/assets/geremy-ocsa.webp"
+        "src": "./src/assets/geremy-ocsa.webp"
       },
       "linkedin": "https://www.linkedin.com/in/geremy-ocsa-flores",
       "testimonial": "Collaborating with Nicolás on several academic projects was a truly enriching experience. His passion for design and commitment to writing clean, well-structured code consistently elevated the team's output. He also showed strong leadership skills and a genuine ability to collaborate effectively within a group setting."
@@ -173,7 +173,7 @@
       "organization": "@DigitalBúho",
       "image": {
         "alt": "Debora Abarca",
-        "src": "/src/assets/debora-abarca.webp"
+        "src": "./src/assets/debora-abarca.webp"
       },
       "linkedin": "https://www.linkedin.com/in/debora-abarca-zavala-2068782a3",
       "testimonial": "Working with Nicolas at EasyHotel was a pleasure. He's a dedicated and skilled Full Stack Developer with a sharp eye for detail and a proactive mindset. A reliable teammate and a true professional."
