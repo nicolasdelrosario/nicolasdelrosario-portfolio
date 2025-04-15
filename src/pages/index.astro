@@ -1,25 +1,63 @@
 ---
-import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import "../styles/global.css";
+import Hero from "@/components/sections/Hero.astro";
+import Experience from "@/components/sections/Experience.astro";
+import Skills from "@/components/sections/Skills.astro";
+import Projects from "@/components/sections/Projects.astro";
+import MarqueeMe from "@/components/sections/MarqueeMe.astro";
+import CommandPalette from "@/components/CommandPalette";
+import References from "@/components/sections/References.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+</script>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Portfolio of Nicolas Del Rosario, a frontend-oriented Full Stack Developer specializing in high-performance React and Next.js applications, scalable backend services with Node.js and Hono, real-time architectures, and modern developer tooling. Dedicated to building high-quality, user-focused digital products."
+    />
+
+    <title>Nicolas Del Rosario</title>
+  </head>
+
+  <body>
+    <main
+      class="m-auto w-full min-h-screen p-4 md:p-6 lg:p-16 space-y-8 grid-pattern grid-pattern-size"
+    >
+      <MarqueeMe />
+      <Hero />
+      <Experience />
+      <Projects />
+      <Skills />
+      <References />
+    </main>
+    <CommandPalette client:only="react" />
+  </body>
 </html>
