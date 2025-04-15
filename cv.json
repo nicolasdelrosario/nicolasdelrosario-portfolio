@@ -1,0 +1,182 @@
+{
+  "basics": {
+    "name": "Nicolas Del Rosario",
+    "label": "dedicated to building high-quality products.",
+    "email": "mailto:delrosariolozanonicolas@gmail.com",
+    "linkedin": "https://linkedin.com/in/nicolasdelrosario",
+    "github": "https://github.com/nicolasdelrosario",
+    "url": "https://nicolasdelrosario.com",
+    "summary": "Frontend-oriented Full Stack Engineer skilled in high-performance React and Next.js apps, scalable backend services with Node.js and Hono, modern real-time architectures, and seamless integration of modern tooling.",
+    "location": {
+      "city": "Lima",
+      "countryCode": "PE",
+      "region": "Perú"
+    }
+  },
+  "work": [
+    {
+      "name": "LetyMind",
+      "position": "FullStack Engineer",
+      "url": "https://letymind.com",
+      "startDate": "2023-11-10",
+      "endDate": null,
+      "summary": "I implemented automated messaging using n8n and Hono, reducing manual processing by sending reports and workflow notifications via WhatsApp and email. I also built an error-handling workflow that triggers Discord alerts for failed messages, and am currently developing the platform dashboard to enhance operational efficiency.",
+      "badgets": [
+        "Remote",
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Hono",
+        "Node.js",
+        "SQLite",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "name": "EasyHotel",
+      "position": "Frontend Developer Intern",
+      "url": "https://twitch.tv/midudev",
+      "startDate": "2023-03-01",
+      "endDate": "2023-06-15",
+      "summary": "I developed a dynamic hotel detail page using Next.js, where slug-based routing enabled real-time queries to a MySQL database for displaying detailed hotel information. Additionally, I integrated a fully responsive contact form to facilitate seamless customer interactions.",
+      "badgets": ["Hybrid", "React", "Next.js", "TypeScript", "MySQL"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "San Ignacio de Loyola Institute",
+      "url": "https://isil.pe",
+      "area": "Software Development",
+      "studyType": "Bachelor",
+      "startDate": "2022-01-04",
+      "endDate": "2024-12-22"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend Development",
+      "technologies": [
+        "React",
+        "Next.js",
+        "Astro",
+        "TypeScript",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "Shadcn/UI",
+        "React-Hook-Form"
+      ]
+    },
+    {
+      "category": "Backend Development",
+      "technologies": [
+        "Hono",
+        "NestJS",
+        "Node.js",
+        "Bun",
+        "SQLite",
+        "PostgreSQL",
+        "MySQL",
+        "Drizzle ORM",
+        "Prisma ORM"
+      ]
+    },
+    {
+      "category": "Platforms & Infrastructure",
+      "technologies": [
+        "Cloudflare Workers",
+        "Cloudflare Pages",
+        "DigitalOcean",
+        "Supabase",
+        "Firebase"
+      ]
+    },
+    {
+      "category": "Dev Tools & Utilities",
+      "technologies": [
+        "Zod",
+        "Git",
+        "GitHub",
+        "Biome",
+        "ESLint",
+        "Prettier",
+        "Postman"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Advanced"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Glossary",
+      "description": "Interactive glossary application that provides comprehensive word definitions, pronunciations, and synonyms.",
+      "url": "https://glossary.nicolasdelrosario.com",
+      "github": "https://github.com/nicolasdelrosario/glossary",
+      "technologies": ["Next.js", "React", "CSS3"]
+    },
+    {
+      "name": "Whatsapp N8N Server",
+      "description": "REST API server for WhatsApp automation via whatsapp-web.js, made to integrate with n8n workflows.",
+      "github": "https://github.com/nicolasdelrosario/whatsapp-n8n-server",
+      "technologies": ["Hono", "TypeScript", "Node.js", "Zod", "N8N"]
+    },
+    {
+      "name": "Petcare",
+      "description": "Veterinary clinic management platform that automates and integrates core services to optimize clinical workflows.",
+      "url": "https://petcare.nicolasdelrosario.com",
+      "github": "https://github.com/nicolasdelrosario/petcare-frontend",
+      "technologies": [
+        "NestJS",
+        "TypeScript",
+        "TypeORM",
+        "Next.js",
+        "React",
+        "Tailwind",
+        "Shadcn/UI"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Ray Del Rosario",
+      "role": "DevOps Engineer",
+      "organization": "@CleverIT",
+      "image": {
+        "alt": "Ray Del Rosario",
+        "src": "/src/assets/ray-del-rosario.webp"
+      },
+      "linkedin": "https://www.linkedin.com/in/raydelrosario",
+      "testimonial": "As his older brother, I've had a front-row seat to Nicolas' growth in tech. His dedication, fast learning curve, and genuine passion for building clean, scalable solutions stand out. While we haven’t worked together directly, I fully vouch for his technical abilities and work ethic."
+    },
+    {
+      "name": "Geremy Ocsa",
+      "role": "Full Stack Developer",
+      "organization": "Freelancer",
+      "image": {
+        "alt": "Geremy Ocsa",
+        "src": "/src/assets/geremy-ocsa.webp"
+      },
+      "linkedin": "https://www.linkedin.com/in/geremy-ocsa-flores",
+      "testimonial": "Collaborating with Nicolás on several academic projects was a truly enriching experience. His passion for design and commitment to writing clean, well-structured code consistently elevated the team's output. He also showed strong leadership skills and a genuine ability to collaborate effectively within a group setting."
+    },
+    {
+      "name": "Debora Abarca",
+      "role": "Frontend Developer Intern",
+      "organization": "@DigitalBúho",
+      "image": {
+        "alt": "Debora Abarca",
+        "src": "/src/assets/debora-abarca.webp"
+      },
+      "linkedin": "https://www.linkedin.com/in/debora-abarca-zavala-2068782a3",
+      "testimonial": "Working with Nicolas at EasyHotel was a pleasure. He's a dedicated and skilled Full Stack Developer with a sharp eye for detail and a proactive mindset. A reliable teammate and a true professional."
+    }
+  ]
+}
