@@ -12,65 +12,72 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import { Github, ExternalLink } from "@lucide/astro";
 import { Badge } from "../ui/badge";
+
+import GitHub from "@/icons/GitHub.astro";
+import ExternalLink from "@/icons/ExternalLink.astro";
 ---
 
 <MaxWidthWrapper>
-  <CardTitle className="text-2xl font-bold tracking-wider mb-4"
+  <CardTitle
+    className="text-2xl font-bold tracking-wider mb-4 dark:text-foreground"
     >Projects</CardTitle
   >
   <ul class="sm:grid-cols-2 space-y-4 sm:space-y-0 gap-4 sm:grid">
     {
       projects.map(({ name, description, url, github, technologies }) => {
         return (
-          <Card className="bg-secondary-background/80 relative">
-            <CardHeader className="flex justify-between items-center text-lg leading-relaxed font-bold">
-              {name}
-              <CardAction className="flex gap-4">
-                {github && (
-                  <a
-                    href={github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class={buttonVariants({
-                      size: "icon",
-                      class: "cursor-pointer",
-                    })}
-                  >
-                    <Github />
-                  </a>
+          <li>
+            <Card className="bg-secondary-background/80 dark:bg-secondary-background relative">
+              <CardHeader className="flex justify-between items-center text-lg leading-relaxed font-bold">
+                {name}
+                <CardAction className="flex gap-4">
+                  {github && (
+                    <a
+                      href={github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View source code on GitHub"
+                      class={buttonVariants({
+                        size: "icon",
+                        class: "cursor-pointer",
+                      })}
+                    >
+                      <GitHub />
+                    </a>
+                  )}
+                  {url && (
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="View live project"
+                      class={buttonVariants({
+                        size: "icon",
+                        class: "cursor-pointer",
+                      })}
+                    >
+                      <ExternalLink />
+                    </a>
+                  )}
+                </CardAction>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <CardDescription className="leading-relaxed text-md font-normal">
+                  {description}
+                </CardDescription>
+              </CardContent>
+              <CardFooter>
+                {technologies && (
+                  <div class="flex flex-wrap gap-2">
+                    {technologies.map((tech) => (
+                      <Badge className="text-xs px-2 py-0.5">{tech}</Badge>
+                    ))}
+                  </div>
                 )}
-                {url && (
-                  <a
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class={buttonVariants({
-                      size: "icon",
-                      class: "cursor-pointer",
-                    })}
-                  >
-                    <ExternalLink />
-                  </a>
-                )}
-              </CardAction>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <CardDescription className="leading-relaxed text-md font-normal">
-                {description}
-              </CardDescription>
-            </CardContent>
-            <CardFooter>
-              {technologies && (
-                <div class="flex flex-wrap gap-2">
-                  {technologies.map((tech) => (
-                    <Badge className="text-xs px-2 py-0.5">{tech}</Badge>
-                  ))}
-                </div>
-              )}
-            </CardFooter>
-          </Card>
+              </CardFooter>
+            </Card>
+          </li>
         );
       })
     }

@@ -14,7 +14,9 @@ import { work } from "@cv";
 ---
 
 <MaxWidthWrapper className="space-y-4">
-  <h2 class="text-2xl font-bold tracking-wider">Work Experience</h2>
+  <h2 class="text-2xl font-bold tracking-wider dark:text-foreground">
+    Work Experience
+  </h2>
   <ul class="space-y-4">
     {
       work.map(({ name, startDate, endDate, position, summary, badgets }) => {
@@ -25,7 +27,7 @@ import { work } from "@cv";
 
         return (
           <li>
-            <Card className="w-full bg-main/80">
+            <Card className="w-full bg-main/80  dark:text-secondary-background dark:bg-main">
               <CardHeader className="flex justify-between items-start mb-1">
                 <div>
                   <CardTitle className="text-lg leading-relaxed">
@@ -40,7 +42,9 @@ import { work } from "@cv";
               </CardHeader>
 
               <CardContent>
-                <p class="text-foreground leading-relaxed">{summary}</p>
+                <p class="text-foreground leading-relaxed dark:text-secondary-background">
+                  {summary}
+                </p>
               </CardContent>
 
               <CardFooter className="flex flex-wrap gap-1.5">

@@ -1,7 +1,11 @@
 ---
 import Star8 from "@/components/stars/s8";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper.astro";
-import { Earth, Mail, Github, Linkedin } from "@lucide/astro";
+
+import LinkedIn from "@/icons/LinkedIn.astro";
+import GitHub from "@/icons/GitHub.astro";
+import Mail from "@/icons/Mail.astro";
+import WorldMap from "@/icons/WorldMap.astro";
 
 import { basics } from "@cv";
 import { Button } from "../ui/button";
@@ -10,13 +14,15 @@ const { city, region } = location;
 ---
 
 <MaxWidthWrapper className="md:grid grid-cols-6">
-  <div class="sm:grid-cols-4 sm:grid md:block md:col-span-4">
+  <div
+    class="sm:grid-cols-4 sm:grid md:block md:col-span-4 dark:text-foreground"
+  >
     <div class="space-y-4 sm:col-span-3">
       <h1 class="text-4xl font-bold tracking-wider">{name}</h1>
       <p class="text-2xl font-semibold tracking-wide leading-10">
         I'm a
         <span
-          class="relative border-1 border-border/40 bg-main/80 px-2 rounded-base inline-flex items-center gap-2"
+          class="relative border-1 border-border/40 bg-main/80 px-2 rounded-base inline-flex items-center gap-2 dark:bg-main dark:text-main-foreground"
         >
           <Star8
             color="background"
@@ -38,8 +44,8 @@ const { city, region } = location;
       </p>
     </div>
     <div class="space-y-4 sm:col-span-1">
-      <p class="text-md flex items-center">
-        <Earth class="size-4 mr-2" />
+      <p class="text-md flex items-center gap-2">
+        <WorldMap />
         {region} - {city}
       </p>
       <footer class="space-x-4 flex space-y-4 md:space-y-0 md:block flex-wrap">
@@ -49,9 +55,11 @@ const { city, region } = location;
               href={`mailto:${email}`}
               target="_blank"
               title={`Send an email to ${name}`}
-              aria-label={`Send an email to ${name}`}
             >
-              <Button className="cursor-pointer bg-main/80 hover:bg-main/100">
+              <Button
+                className="cursor-pointer bg-main/80 hover:bg-main/100 dark:bg-main"
+                aria-label={`Send an email to ${name}`}
+              >
                 <Mail class="size-4" />
                 <span class="sr-only">Send an email</span>
               </Button>
@@ -64,10 +72,13 @@ const { city, region } = location;
               href={github}
               target="_blank"
               title={`Visit ${name}'s GitHub profile`}
-              aria-label={`Visit ${name}'s GitHub profile`}
             >
-              <Button className="cursor-pointer bg-main/80 hover:bg-main/100">
-                <Github class="size-4" />
+              <Button
+                className="cursor-pointer bg-main/80 hover:bg-main/100 dark:bg-main"
+                aria-label={`Visit ${name}'s GitHub profile`}
+              >
+                <GitHub class="size-4" />
+                <span class="sr-only">Visit GitHub profile</span>
               </Button>
             </a>
           )
@@ -78,10 +89,13 @@ const { city, region } = location;
               href={linkedin}
               target="_blank"
               title={`Visit ${name}'s LinkedIn profile`}
-              aria-label={`Visit ${name}'s LinkedIn profile`}
             >
-              <Button className="cursor-pointer bg-main/80 hover:bg-main/100">
-                <Linkedin class="size-4" />
+              <Button
+                className="cursor-pointer bg-main/80 hover:bg-main/100 dark:bg-main"
+                aria-label={`Visit ${name}'s LinkedIn profile`}
+              >
+                <LinkedIn class="size-4" />
+                <span class="sr-only">Visit LinkedIn profile</span>
               </Button>
             </a>
           )
