@@ -1,6 +1,6 @@
 {
-  "name": "my-astro-app",
-  "compatibility_date": "2025-03-25",
+  "name": "my-portfolio",
+  "compatibility_date": "2025-04-15",
   "assets": {
     "directory": "./dist"
   }
