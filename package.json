@@ -1,5 +1,6 @@
 {
-  "name": "astro-app",
+  "name": "my-portfolio",
+  "author": "Nicolas Del Rosario",
   "type": "module",
   "version": "0.0.1",
   "scripts": {

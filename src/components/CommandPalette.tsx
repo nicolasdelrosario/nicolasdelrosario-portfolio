@@ -97,10 +97,8 @@ export default function CommandPalette() {
     <>
       {renderHint && (
         <div
-          className={`fixed bottom-0 bg-main border-t-2 min-h-10 w-full z-10 ${
-            showHint
-              ? "animate-fade-in grid place-content-center"
-              : "animate-fade-out grid place-content-center"
+          className={`fixed bottom-0 bg-main border-t-2 min-h-10 w-full z-10 hidden lg:grid place-content-center ${
+            showHint ? "animate-fade-in" : "animate-fade-out"
           }`}
         >
           <p className="text-sm">
