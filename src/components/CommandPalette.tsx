@@ -45,7 +45,7 @@ export default function CommandPalette() {
   const keyActionMap = React.useMemo(
     () => ({
       k: () => setOpen((prev) => !prev),
-      o: () => handleOpenLink(email),
+      o: () => handleOpenLink(`mailto:${email}`),
       x: () => handleOpenLink(github),
       g: () => handleOpenLink(linkedin),
       m: () => toggleTheme(),
@@ -167,7 +167,7 @@ export default function CommandPalette() {
           <CommandGroup heading="Social Media">
             <CommandItem
               className="cursor-pointer"
-              onSelect={() => handleOpenLink(email)}
+              onSelect={() => handleOpenLink(`mailto:${email}`)}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
